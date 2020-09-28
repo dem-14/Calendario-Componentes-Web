@@ -15,14 +15,49 @@ css.replaceSync(`
     }
     :host(.today){
         background-color:  rgb(0, 120, 215);
-        padding:2px;
+        padding:0.125rem;
+/*         color: white; */
+        font-weight: bolder;
+        outline: 0.125rem solid rgb(0, 120, 215);
     }
-    :host(:hover){
-        border: 1px solid white;
+
+    :host(.selected){
+        outline: 0.125rem solid rgb(0, 120, 215);
     }
+
+    :host(.today.selected){
+        background-color: rgb(0, 120, 215);
+        border: 0.125rem solid black;
+        outline: 0.125rem solid rgb(0, 120, 215);
+    }
+
+    :host(.today.selected:hover){
+        background-color: rgb(0, 120, 215);
+        border: 0.125rem solid black;
+        outline: 0.125rem solid rgb(102, 174, 231);
+    }
+
+    :host(.today:not(.selected):hover){
+        background-color: rgb(0, 120, 215);
+        outline: 0.125rem solid rgb(102, 174, 231);
+    }
+
+    :host(:not(.selected):not(.today):hover) {     
+        outline: 0.125rem solid grey;
+     }
+
+    :host(:not(.selected):not(.today).notinmonth) {    
+        color: grey;
+    }
+
+
+/*     :host(:hover){
+        border: 0.063rem solid white;
+    }
+
     :host(.notinmonth){
         color:gray;
-    }
+    } */
 `);
 
 export class Day extends CurrentText {
@@ -51,6 +86,14 @@ export class Day extends CurrentText {
     }
     removeSelectedDay(){
         this.classList.remove(SELECTDAY);
+    }
+    todayDay(){
+        this.#objectDay.isToday = true;
+        this.classList.add(CLASSTODAY);
+    }
+    removeTodayDay(){
+        this.#objectDay.isToday = false;
+        this.classList.remove(CLASSTODAY);
     }
     setClass(value) {
         this.removeClass();

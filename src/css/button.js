@@ -16,17 +16,17 @@ button:focus {outline:0;}
 i{
 
     border: solid gray;
-    border-width: 0 3px 3px 0;
+    border-width: 0 0.188rem 0.188rem 0;
     display: inline-block;
-    padding: 5px;
+    padding: 0.313rem;
 }
 button:hover>i{
     border: solid white;
-    border-width: 0 3px 3px 0;
+    border-width: 0 0.188rem 0.188rem 0;
 }
 
 .previous{
-    margin-top: 10px;
+    margin-top: 0.625rem;
     transform: rotate(-135deg);
 }
 .next{

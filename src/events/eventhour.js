@@ -7,9 +7,9 @@ css.replaceSync(`
     :host{
        display:grid;
        grid-template-rows: 50% 50%;
-       row-gap: 2px;
+       row-gap: 0.125rem;
        align-items: center;
-       font-size:12px;
+       font-size:0.75rem;
     }
     :host(.allday){
         grid-template-rows: auto;

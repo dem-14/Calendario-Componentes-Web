@@ -4,9 +4,9 @@ const css = new CSSStyleSheet();
 css.replaceSync(`
     :host{
         display:grid;
-        grid-template-columns: repeat(7,40px);
-        gap:2px;
-        height:40px;
+        grid-template-columns: repeat(7,2.5rem);
+        gap: 0.375rem;
+        height:2.5rem;
     }
     div{
         display: flex;

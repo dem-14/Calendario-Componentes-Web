@@ -27,7 +27,19 @@ export const EVENTDATA = {
                 end: new Date(2020, 2, 19, 23, 59, 59).getTime(),
                 text: 'San joel'
             }
-            
+
+        ]
+    },
+    "20201231": {
+        date: new Date(2020, 11, 31),
+        events: [
+
+
+            {
+                start: new Date(2020, 11, 31).getTime(),
+                end: new Date(2020, 11, 31, 23, 59, 59).getTime(),
+                text: 'Cumple David'
+            }
         ]
     }
 }

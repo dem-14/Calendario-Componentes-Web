@@ -10,7 +10,7 @@ export const CONFIG={
         timeZone: 'Europe/Madrid'
     },
     dateOptions:{
-        weekday: 'long', day: '2-digit', month: 'long', year: 'numeric'
+        weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
     },
     monthOptions:{
         month: 'long',
@@ -19,5 +19,4 @@ export const CONFIG={
     dayOptions:{
         weekday:'long', day:'numeric'
     }   
-    
 }

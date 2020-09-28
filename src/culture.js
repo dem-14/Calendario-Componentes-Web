@@ -22,8 +22,9 @@ export const CULTURE = {
         daysOfWeek:["L","M","X","J","V","S","D"],
         firstDayOfWeek: MONDAY,
         allDay:"Todo el dia",
-        noEvents: "Sin eventos"
-
+        noEvents: "Sin eventos",
+        previous: "Retroceder mes",
+        next: "Avanzar mes",
     },
     "en": {
         currentHour: parts => {
@@ -41,7 +42,9 @@ export const CULTURE = {
         daysOfWeek:["S","M","T","W","T","F","S"],
         firstDayOfWeek: SUNDAY,
         allDay:"All day",
-        noEvents: "No events"
+        noEvents: "No events",
+        previous: "Previous month",
+        next: "Next month",
     },
     "ar": {
         currentDate: parts => {
@@ -55,7 +58,9 @@ export const CULTURE = {
         daysOfWeek:["L","M","X","J","V","S","D"],
         firstDayOfWeek: SATURDAY,
         allDay:"wehe wehe",
-        noEvents: "waha waha"    
+        noEvents: "waha waha",
+        previous: "Allahu",
+        next: "Ackbar",
     
     }
 }

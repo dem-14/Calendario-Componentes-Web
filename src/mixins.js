@@ -1,6 +1,6 @@
 export const MixinPubSub = Base => class extends Base{
    #pubsub;
-   
+   #mixinvar;
     connectedCallback(){ 
         if(!this.#pubsub){
             let event = new CustomEvent('getpub',{

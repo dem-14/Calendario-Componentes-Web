@@ -1,9 +1,24 @@
 import { CurrentTextElement } from '../currenttextelement.js'
 import { CHANELS } from '../chanels.js'
 import { FormatDate } from '../formatdate.js';
-import {MixinPubSub} from '../mixins.js'
+import { MixinPubSub } from '../mixins.js'
 
-export class EventDate extends MixinPubSub(CurrentTextElement) { 
+import {CurrentText} from '../currenttext.js'
+
+export class EventDate extends CurrentText {
+    
+    init(objectDay) {
+        super.init(FormatDate.getDay(objectDay.date));
+    } 
+
+}
+customElements.define('bcn-event-date', EventDate);
+
+// Debajo como estaba antes
+
+/* 
+
+export class EventDate extends MixinPubSub(CurrentTextElement) {
     constructor() {
         super(CHANELS.SELECTEDDAY, FormatDate.getDay)
     }
@@ -17,3 +32,4 @@ export class EventDate extends MixinPubSub(CurrentTextElement) {
 }
 customElements.define('bcn-event-date', EventDate);
 
+ */

@@ -5,7 +5,7 @@ import { padding } from './css/padding.js';
 const css = new CSSStyleSheet();
 css.replaceSync(`
     :host{
-        border-bottom: 1px solid;
+        border-bottom: 0.063rem solid;
     }
 `);
 class CalendarHeader extends HTMLElement {

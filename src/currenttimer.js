@@ -5,7 +5,9 @@ import {CurrentTextElement} from './currenttextelement.js'
 const css = new CSSStyleSheet();
 css.replaceSync(`
     :host{
-      font-size:48px;
+      font-size:3rem;
+
+      font-weight: lighter;
     }
 `);
 class CurrentTimer extends CurrentTextElement{

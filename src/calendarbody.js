@@ -6,17 +6,21 @@ import { } from './calendarpage.js'
 import { flexcolumn } from './css/flexcolumn.js'
 import { padding } from './css/padding.js'
 import { button } from './css/button.js'
+
+import { CONFIG } from './config.js';
+import { CULTURE } from './culture.js'
+
 const css = new CSSStyleSheet();
 css.replaceSync(`
     :host{
-        border-bottom: 1px solid;
+        border-bottom: 0.063rem solid;
     }
    
     .container{
         display:grid;
         grid-template-columns: repeat(7,2.5rem);
         grid-template-rows:2.5rem;
-        gap:2px;
+        gap: 0.375rem;
         align-items: center;
     }
     bcn-currentmonth{
@@ -27,8 +31,10 @@ css.replaceSync(`
 class CalendarBody extends HTMLElement {
     constructor() {
         super();
+
+
         let shadow = this.attachShadow({ mode: 'open' });
-        shadow.adoptedStyleSheets = [flexcolumn, css, padding,button];
+        shadow.adoptedStyleSheets = [flexcolumn, css, padding, button];
         this.components().forEach(element => {
             shadow.appendChild(element);
         });
@@ -65,12 +71,17 @@ class CalendarBody extends HTMLElement {
     createButton(attr) {
         let button = document.createElement('button', { is: 'bcn-calendarbutton' });
         button.setAttribute(attr, '');
+        if (CULTURE[CONFIG.culture][attr] === undefined) {
+            button.setAttribute('alt', attr);
+        }
+        else {
+            button.setAttribute('alt', CULTURE[CONFIG.culture][attr]);
+        }
         let i = document.createElement('i');
         i.classList.add(attr);
         button.appendChild(i);
         return button;
     }
-
 }
 
 customElements.define('bcn-calendar-body', CalendarBody);

@@ -6,8 +6,8 @@ css.replaceSync(`
     :host{
         display:grid;
         grid-template-columns:20% auto;
-        grid-template-rows:50px;
-        column-gap: 12px;
+        grid-template-rows: 3.125rem;
+        column-gap: 0.75rem;
         align-items: center;
     }
     

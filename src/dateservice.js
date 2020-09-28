@@ -53,6 +53,9 @@ export class DateService {
     static isCurrentDate(oldDate, newDate) {
         return isToday(oldDate,newDate);
     }
+    static isNextMonth(oldDate, newDate){
+        return isCurrentMonth(this.getNextOrPreviosMonth(oldDate, +1), newDate)
+    }
     static getNextOrPreviosMonth(date,dif){
         let firstDayOfMonth =getFirstDayOfMonth(date);
         dif = firstDayOfMonth.getMonth() + dif;
